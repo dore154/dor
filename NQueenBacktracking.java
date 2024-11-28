@@ -70,4 +70,6 @@ public class NQueenBacktracking {
             }
         }
     }
+// time complexity  O(n!)
+    // space complexity O(n^2)
     
