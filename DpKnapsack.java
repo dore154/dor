@@ -65,3 +65,5 @@ public class DpKnapsack {
         scanner.close();
     }
 }
+//T.c O(n*capacity);
+//S.c O(n*capacity);
