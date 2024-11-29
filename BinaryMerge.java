@@ -114,4 +114,5 @@ public class BinaryMerge {
         // User input for the key
     }
 }
-
+//TC O(n.logn+m.log n+T.n)
+//SC O(n)
