@@ -64,3 +64,6 @@ public class greedyKnapsack{
         sc.close();
     }
 }
+
+// TC nlogn
+// SC n
