@@ -115,4 +115,8 @@ public class QuickMerge {
         System.out.println("----------------------------------------------------");
     }
 }
+// merge==>TC= n.log n
+//            SC=  n
 
+// Quick==> TC =n.logn , n^2
+//          SC=n log n
