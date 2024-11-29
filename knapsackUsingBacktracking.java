@@ -33,5 +33,6 @@ public class knapsackUsingBacktracking {
         }
     }
     
-    
+    // TC 2^n
+    // SC n
 
