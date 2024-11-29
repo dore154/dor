@@ -119,3 +119,5 @@ class Knapsack_Using_BB {
         System.out.println("Maximum profit (Branch and Bound): " + knapsackBranchAndBound(weights, values, capacity));
     }
 }
+//Time Complexity (Worst Case): O(n⋅2^n)
+//Space Complexity O(2^n)
