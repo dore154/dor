@@ -1,0 +1,40 @@
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_error , mean_squared_error, r2_score
+
+df=pd.read_csv('data.csv')
+df.sample(10)
+df.info()
+df['YearsExperience']=df['YearsExperience'].replace({'years':'','yrs':''},regex=True)
+df['YearsExperience']=df['YearsExperience'].astype(float)
+df['Salary']=df['Salary'].replace({'\$':'',',':''},regex=True)
+df['Salary']=df['Salary'].str.strip()
+df['Salary']=df['Salary'].astype(float)
+df['EducationLevelEncoded']=df['EducationLevel'].map({'Bachelors':1, 'Masters':2,'phD':3})
+
+X=df[['YearsExperience','EducationLevelEncoded']]
+y=df['Salary']
+
+X_train, X_test, y_train, y_test=train_test_split(X,y,test_size=0.2,random_state=11)
+
+model=LinearRegression(n_jobs=-1)
+model.fit(X_train, y_train)
+
+print("Coefficient or slope:", model.coef_)
+
+print("Intercept:", model.intercept_)
+
+MAE=mean_absolute_error(y_test,y_pred)
+MSE=mean_squared_error(y_test, y_pred)
+RMSE=np.sqrt(MSE)
+print(MAE)
+print(MSE)
+print(RMSE)
+
+score=r2_score(y_test,y_pred)
+print(score)
+
+#display adjusted r2
+1-(((1-score)*(len(y_test)-1))/(len(y_test)-1-X_test.shape[1]))
